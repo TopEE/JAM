@@ -5,26 +5,45 @@
  */
 package dk.jam;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
  * @author mads
  */
-public class Jam {
+@Entity
+public class Jam implements Serializable {
     
+    
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    Long id;
     
     private String type;
     
     private JAM_SIZE size;
     
+    
+    
     public Jam() {
     }
     
    
+    
+    
 
     public Jam(String type, JAM_SIZE size) {
         this.type = type;
         this.size = size;
     }
+    
+    
+    
 
     public String getType() {
         return type;
@@ -41,7 +60,15 @@ public class Jam {
     public void setSize(JAM_SIZE size) {
         this.size = size;
     }
-    
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     
     
 }
