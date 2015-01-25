@@ -5,13 +5,10 @@
  */
 package dk.jam.members.entity;
 
+import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
 
 /**
  *
@@ -32,29 +29,25 @@ public class ClubMember implements Serializable {
     private Date memberSince;
     
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
-    private Date lastUpdateTimestamp;
+    @Version
+    private Timestamp lastUpdateTimestamp;
 
     public ClubMember() {
+    }
+
+    public ClubMember(String name, Date memberSince) {
+        this.name = name;
+        this.memberSince = memberSince;
     }
 
     public Date getLastUpdateTimestamp() {
         return lastUpdateTimestamp;
     }
 
-    public void setLastUpdateTimestamp(Date lastUpdateTimestamp) {
+    public void setLastUpdateTimestamp(Timestamp lastUpdateTimestamp) {
         this.lastUpdateTimestamp = lastUpdateTimestamp;
     }
 
-    
-    
-    public ClubMember(String name, Date memberSince) {
-        this.name = name;
-        this.memberSince = memberSince;
-    }
-
-    
-    
-    
     public Long getId() {
         return id;
     }

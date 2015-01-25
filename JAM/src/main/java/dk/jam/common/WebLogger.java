@@ -5,23 +5,17 @@
  */
 package dk.jam.common;
 
+import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.inject.Inject;
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 
 /**
  *
  * @author mads
  */
-@WebFilter(urlPatterns = "/*")
+@WebFilter(urlPatterns = "/fis")
 public class WebLogger implements Filter{
     
     Logger logger = Logger.getLogger(WebLogger.class.getName());

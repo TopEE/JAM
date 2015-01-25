@@ -4,13 +4,25 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html ng-app="breakfast">
     <head>
-        <title>TODO supply a title</title>
+        <title>Breakfast Club</title>
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="min/bootstrap.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/angular.js"></script>
+        <script src="js/angular-resource.js"></script>
+        <script src="js/angular-route.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <script src="js/app/breakfast.js"></script>
     </head>
-    <body>
-        <div>TODO write content</div>
+    <body role="document">
+    <h1 class="h3">Breakfast Club</h1>
+
+    <div ng-view></div>
+
+
     </body>
 </html>

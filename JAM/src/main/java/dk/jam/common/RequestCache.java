@@ -5,9 +5,9 @@
  */
 package dk.jam.common;
 
-import java.util.Date;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
+import java.sql.Timestamp;
 
 /**
  *
@@ -16,15 +16,17 @@ import javax.inject.Named;
 @Named
 @RequestScoped
 public class RequestCache {
-    
-    private Date timeStamp;
 
-    public Date getTimeStamp() {
-        if(timeStamp == null) timeStamp = new Date();
+    private Timestamp timeStamp;
+
+    public Timestamp getTimeStamp() {
+        if (timeStamp == null) {
+            timeStamp = new Timestamp(System.currentTimeMillis());
+        }
         return timeStamp;
     }
 
-    public void setTimeStamp(Date timeStamp) {
+    public void setTimeStamp(Timestamp timeStamp) {
         this.timeStamp = timeStamp;
     }
     

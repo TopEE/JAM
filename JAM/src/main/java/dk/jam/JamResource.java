@@ -5,6 +5,8 @@
  */
 package dk.jam;
 
+import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
@@ -13,9 +15,11 @@ import javax.ws.rs.Path;
  * @author mads
  */
 @Path("/jam")
+@Stateless
 public class JamResource {
-    
-    
+
+    @Inject
+    JamService JamService;
     
     @GET
     public Jam getBestJam() {
