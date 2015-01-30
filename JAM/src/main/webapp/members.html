@@ -1,0 +1,23 @@
+
+<form action="login">
+<table>
+    <tr>
+        <td>Email</td><td><input type="text" placeholder="enter your email"></td>
+    </tr>
+    <tr>
+        <td>Password</td><td><input type="password" placeholder="enter your password" ></td>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="button" value="Login" ></td>
+    </tr>
+       
+</table>
+    <br>
+    
+</form>
+
+<div ng-controller="AllMembers">
+    <table class="table table-striped">
+        <tr ng-repeat="member in members" ><td>{{member.name}}</td></tr>
+    </table>
+</div>

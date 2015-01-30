@@ -30,7 +30,7 @@ public class ClubMember implements Serializable {
     
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     @Version
-    private Timestamp lastUpdateTimestamp;
+    private Date lastUpdateTimestamp;
 
     public ClubMember() {
     }

@@ -18,7 +18,7 @@ import javax.ejb.Singleton;
 public class TimerDude {
     
     
-    //@Schedule(hour = "*", minute = "*", second = "0", persistent = true)
+    @Schedule(hour = "*", minute = "*", second = "0", persistent = true)
     public void doStuff() {
         System.out.println("Hello! Time is " + DateFormat.getDateTimeInstance().format(new Date(System.currentTimeMillis())));
     }
